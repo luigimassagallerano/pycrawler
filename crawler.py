@@ -1,15 +1,15 @@
-import urllib2
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
 import re
 import random
-from bs4 import BeautifulSoup
 
 url = "http://www-rohan.sdsu.edu/~gawron/index.html"
 
 while url is not None:
-    print url
+    print(url)
 
     try:
-        html = urllib2.urlopen(url).read()
+        html = urlopen(url).read()
         soup = BeautifulSoup(html)
         links = soup.findAll('a', attrs={'href': re.compile("^http://")})
         tag = random.choice(links)
