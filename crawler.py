@@ -10,7 +10,7 @@ while url is not None:
 
     try:
         html = urlopen(url).read()
-        soup = BeautifulSoup(html)
+        soup = BeautifulSoup(html, 'html.parser')
         links = soup.findAll('a', attrs={'href': re.compile("^http://")})
         tag = random.choice(links)
         link = tag.get('href', None)
