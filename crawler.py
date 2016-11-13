@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import re
 import random
 
-url = "http://www-rohan.sdsu.edu/~gawron/index.html"
+url = input("Starting URL: ")
 
 while url is not None:
     print(url)
